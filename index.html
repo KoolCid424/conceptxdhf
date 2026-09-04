@@ -1,1 +1,449 @@
-It's Coming Soon
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept X | Coming Soon</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #07090d;
+        color: #ffffff;
+    }
+
+    .page {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 500px;
+        overflow: hidden;
+
+        background:
+            radial-gradient(
+                circle at 85% 10%,
+                rgba(0, 170, 255, 0.13),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 10% 100%,
+                rgba(0, 229, 154, 0.07),
+                transparent 28%
+            ),
+            #07090d;
+    }
+
+    /* Background grid */
+    .page::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background-image:
+            linear-gradient(
+                rgba(255,255,255,0.018) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                90deg,
+                rgba(255,255,255,0.018) 1px,
+                transparent 1px
+            );
+
+        background-size: 60px 60px;
+
+        mask-image: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.7),
+            transparent 75%
+        );
+
+        pointer-events: none;
+    }
+
+    /* Navigation */
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 90px;
+
+        padding: 0 7%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        z-index: 10;
+    }
+
+    .logo {
+        font-size: 21px;
+        font-weight: 900;
+        letter-spacing: 4px;
+    }
+
+    .logo-dot {
+        color: #00aaff;
+    }
+
+    .status {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        color: #737e8c;
+
+        font-size: 10px;
+        font-weight: 700;
+
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .status-dot {
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: #00e59a;
+
+        box-shadow:
+            0 0 14px rgba(0, 229, 154, 0.75);
+    }
+
+    /* Hero */
+    .hero {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 100px 25px 70px;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 1100px;
+
+        animation: entrance 0.9s ease-out both;
+    }
+
+    .eyebrow {
+        display: inline-block;
+
+        margin-bottom: 30px;
+
+        padding: 9px 17px;
+
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 999px;
+
+        background: rgba(255,255,255,0.035);
+
+        color: #8994a2;
+
+        font-size: 10px;
+        font-weight: 700;
+
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        backdrop-filter: blur(12px);
+    }
+
+    h1 {
+        font-size: clamp(58px, 11vw, 145px);
+
+        line-height: 0.84;
+
+        letter-spacing: -7px;
+
+        font-weight: 900;
+
+        text-transform: uppercase;
+    }
+
+    .line-one {
+        display: block;
+    }
+
+    .line-two {
+        display: block;
+
+        color: #00aaff;
+
+        text-shadow:
+            0 0 35px rgba(0,170,255,0.18);
+    }
+
+    .description {
+        margin: 32px auto 0;
+
+        max-width: 560px;
+
+        color: #7c8794;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    /* Coming soon indicator */
+    .coming-soon {
+        display: inline-flex;
+
+        align-items: center;
+        gap: 10px;
+
+        margin-top: 34px;
+
+        padding: 13px 19px;
+
+        border: 1px solid rgba(0,170,255,0.16);
+
+        border-radius: 999px;
+
+        background: rgba(0,170,255,0.045);
+
+        color: #9ca8b5;
+
+        font-size: 10px;
+        font-weight: 800;
+
+        letter-spacing: 2.5px;
+
+        text-transform: uppercase;
+    }
+
+    .coming-dot {
+        width: 6px;
+        height: 6px;
+
+        border-radius: 50%;
+
+        background: #00aaff;
+
+        box-shadow:
+            0 0 12px rgba(0,170,255,0.8);
+
+        animation: pulse 2s infinite;
+    }
+
+    /* Bottom */
+    .bottom {
+        position: absolute;
+
+        bottom: 25px;
+        left: 0;
+
+        width: 100%;
+
+        text-align: center;
+
+        color: #424b56;
+
+        font-size: 9px;
+        font-weight: 700;
+
+        letter-spacing: 2.5px;
+
+        text-transform: uppercase;
+    }
+
+    /* Animations */
+    @keyframes entrance {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%,
+        100% {
+            opacity: 0.45;
+            transform: scale(0.9);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.15);
+        }
+    }
+
+    /* Tablet */
+    @media (max-width: 800px) {
+        nav {
+            padding: 0 30px;
+        }
+
+        h1 {
+            letter-spacing: -4px;
+        }
+    }
+
+    /* Phone */
+    @media (max-width: 600px) {
+        nav {
+            height: 75px;
+            padding: 0 22px;
+        }
+
+        .logo {
+            font-size: 18px;
+            letter-spacing: 3px;
+        }
+
+        .status {
+            display: none;
+        }
+
+        .hero {
+            padding: 80px 20px 60px;
+        }
+
+        .eyebrow {
+            margin-bottom: 23px;
+            font-size: 9px;
+        }
+
+        h1 {
+            font-size: clamp(50px, 16vw, 80px);
+            letter-spacing: -3px;
+        }
+
+        .description {
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .coming-soon {
+            margin-top: 28px;
+        }
+
+        .bottom {
+            bottom: 17px;
+            font-size: 8px;
+        }
+    }
+
+    /* Short screens */
+    @media (max-height: 620px) {
+        nav {
+            height: 65px;
+        }
+
+        .hero {
+            padding-top: 65px;
+            padding-bottom: 40px;
+        }
+
+        .eyebrow {
+            margin-bottom: 15px;
+        }
+
+        .description {
+            margin-top: 20px;
+        }
+
+        .coming-soon {
+            margin-top: 20px;
+        }
+
+        .bottom {
+            display: none;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+```
+<nav>
+
+    <div class="logo">
+        DHF<span class="logo-dot">.</span>
+    </div>
+
+    <div class="status">
+        <span class="status-dot"></span>
+        Coming Soon
+    </div>
+
+</nav>
+
+
+<main class="hero">
+
+    <div class="content">
+
+        <div class="eyebrow">
+            Concept X
+        </div>
+
+
+        <h1>
+            <span class="line-one">Concept</span>
+            <span class="line-two">X.</span>
+        </h1>
+
+
+        <p class="description">
+            Something new is being built.
+        </p>
+
+
+        <div class="coming-soon">
+            <span class="coming-dot"></span>
+            Coming Soon
+        </div>
+
+    </div>
+
+</main>
+
+
+<div class="bottom">
+    DHF Industries
+</div>
+```
+
+</div>
+
+</body>
+</html>
