@@ -4,7 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Concept X | Coming Soon</title>
+
+<title>Concept X | DHF Industries</title>
+
+<!-- DHF blue dot favicon -->
+
+<link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%2300aaff'/%3E%3C/svg%3E"
+>
 
 <style>
     * {
@@ -91,6 +99,21 @@
         justify-content: space-between;
 
         z-index: 10;
+    }
+
+    .logo-link {
+        display: inline-block;
+        color: #ffffff;
+        text-decoration: none;
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .logo-link:hover {
+        opacity: 0.75;
+        transform: translateY(-1px);
     }
 
     .logo {
@@ -214,7 +237,7 @@
         line-height: 1.7;
     }
 
-    /* Coming soon indicator */
+    /* Coming soon */
     .coming-soon {
         display: inline-flex;
 
@@ -255,7 +278,7 @@
         animation: pulse 2s infinite;
     }
 
-    /* Bottom */
+    /* Bottom link */
     .bottom {
         position: absolute;
 
@@ -266,7 +289,13 @@
 
         text-align: center;
 
+        z-index: 5;
+    }
+
+    .bottom a {
         color: #424b56;
+
+        text-decoration: none;
 
         font-size: 9px;
         font-weight: 700;
@@ -274,6 +303,13 @@
         letter-spacing: 2.5px;
 
         text-transform: uppercase;
+
+        transition:
+            color 0.2s ease;
+    }
+
+    .bottom a:hover {
+        color: #00aaff;
     }
 
     /* Animations */
@@ -354,6 +390,9 @@
 
         .bottom {
             bottom: 17px;
+        }
+
+        .bottom a {
             font-size: 8px;
         }
     }
@@ -396,9 +435,15 @@
 ```
 <nav>
 
-    <div class="logo">
-        DHF<span class="logo-dot">.</span>
-    </div>
+    <a
+        class="logo-link"
+        href="https://dhfindustries.online"
+        aria-label="Return to DHF Industries"
+    >
+        <div class="logo">
+            DHF<span class="logo-dot">.</span>
+        </div>
+    </a>
 
     <div class="status">
         <span class="status-dot"></span>
@@ -416,17 +461,14 @@
             Concept X
         </div>
 
-
         <h1>
             <span class="line-one">Concept</span>
             <span class="line-two">X.</span>
         </h1>
 
-
         <p class="description">
             Something new is being built.
         </p>
-
 
         <div class="coming-soon">
             <span class="coming-dot"></span>
@@ -439,7 +481,14 @@
 
 
 <div class="bottom">
-    DHF Industries
+
+    <a
+        href="https://dhfindustries.online"
+        aria-label="Return to DHF Industries"
+    >
+        DHF Industries
+    </a>
+
 </div>
 ```
 
